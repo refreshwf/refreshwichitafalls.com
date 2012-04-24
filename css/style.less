@@ -56,8 +56,11 @@ h1 {
 h2 {
 	font: 500 2.2em @fontFamilyAlt;
 	color: @textColorAlt;
-	.text-shadow(1px, 1px, 1px, #555);
 	margin: 0 0 0.83em;
+
+	.textshadow & {
+		.text-shadow(1px, 1px, 1px, #555);
+	}
 }
 
 h3 {
@@ -174,7 +177,7 @@ nav {
 	position: fixed;
 	z-index: 10;
 	width: 100%;
-	border-bottom: 5px solid #fff;
+	border-bottom: 5px solid darken(@highlightColorAlt, 10%);
 	border-bottom: 5px solid rgba(255, 255, 255, 0.8);
 	overflow: hidden;
 
