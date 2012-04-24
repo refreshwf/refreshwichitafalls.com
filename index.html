@@ -1,0 +1,83 @@
+---
+layout: default
+title: 
+---
+
+{% include about.html %}
+
+{% include social.html %}
+
+{% comment %}
+TODO: Finishing styling blog and ready for the first posts.
+<section id="blog" class="section-container">
+	<header class="section-header">
+		<h2>Blog Entries</h2>
+	</header>
+
+	<div class="wrapper">
+		<aside class="pull-left">
+			{% include tags_list.html %}
+		</aside>
+
+		<div class="content pull-right">
+			{% for post in site.categories.blog limit:3 %}
+				<article class="post cat-blog" role="article">
+					<header>
+						<h3 itemprop="name"><a href="{{ post.url }}" rel="bookmark" title="Permanent Link to {{ post.title }}">{{ post.title }}</a></h3> 
+						<small class="meta"> 
+							<time datetime="{{ post.date }}" title="{{ post.date | date_to_string }}" pubdate>{{ post.date | date_to_string }}</time> 
+							| <a href="{{ post.url }}#disqus_thread"></a>
+							{% if post.short-url != nil %}| <a href="{{ post.short-url }}" title="Short link for {{ post.title }}">{{ post.short-url }}</a>{% endif %}
+							{{ post.author }}
+						</small>
+					</header>
+				
+					<div class="post-text" itemprop="articleBody">
+						{{ post.content | replace:'excerpt start -->','' | replace:'<!-- excerpt end','' }}
+					</div>
+					
+					{% if post.tags != empty %}
+					<footer>
+						<small class="left">In {% for tag in post.tags %}<a href="{{ site.var.tags_path }}#{{ tag }}-ref" title="Posts tagged with {{ tag }}" rel="tag">{{ tag }}</a>{% if forloop.last %}{% else %}, {% endif %}{% endfor %}</small>
+					</footer>
+					{% endif %}
+				</article>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+{% endcomment %}
+
+<section id="talks" class="section-container">
+	<header class="section-header">
+		<h2>Talks &amp; Panels</h2>
+	</header>
+	
+	<div class="wrapper">
+		<div class="content pull-left">
+			{% comment %}TODO: After first talk, add offset:1 to the for so the upcoming event doesn't show up, only the past ones.{% endcomment %}
+			{% for post in site.categories.talks limit:3 %}
+				<article class="post cat-talk" role="article">
+					<header>
+						<h3 itemprop="name"><a href="{{ post.url }}" rel="bookmark" title="Permanent Link to {{ post.title }}">{{ post.title }}</a></h3> 
+					</header>
+				
+					<div class="post-text" itemprop="articleBody">
+						<strong>{{ post.meeting_date }} - {{ post.author }}</strong>
+						{{ post.content | replace:'excerpt start -->','' | replace:'<!-- excerpt end','' }}
+					</div>
+				</article>
+			{% endfor %}
+		</div>
+
+		<aside class="pull-right">
+			<h3>Your Turn</h3>
+
+			<p>We are always looking for individuals who are interested in doing a presentation. <strong>Refresh WF</strong> aims to educate across a variety of topics and skill level. Whether giving an introduction to HTML and CSS or live coding a single-page JavaScript heavy web app, we hope everyone walks away from each meeting with something.</p>
+
+			<p>Want to give a talk but not sure on what? The best advice is to talk about what you know and love. Learned some new CSS techniques recently? Did you dive into a new language? Played around with that new app or framework? Working on a new project or planning to release a plugin or web app? We would love to hear about what you are working on. Sharing our resources and the tools we use has made the web what it is today.</p>
+		</aside>
+	</div>
+</section>
+
+{% include contact.html %}

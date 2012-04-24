@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+<section class="section-container" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<header class="section-header">
+		<h2 itemprop="name">{{ page.title }}</h2>
+	</header>
+
+	<div class="wrapper">
+		{% if page.category == 'talks' %}
+			<div class="content pull-left" itemprop="articleBody">
+				<strong>{{ page.meeting_date }} - {{ page.author }}</strong>
+				{{ content }}
+			</div>
+
+			<aside class="pull-right">
+				<h3>Your Turn</h3>
+
+				<p>We are always looking for individuals who are interested in doing a presentation. <strong>Refresh WF</strong> aims to educate across a variety of topics and skill level. Whether giving an introduction to HTML and CSS or live coding a single-page JavaScript heavy web app, we hope everyone walks away from each meeting with something.</p>
+
+				<p>Want to give a talk but not sure on what? The best advice is to talk about what you know and love. Learned some new CSS techniques recently? Did you dive into a new language? Played around with that new app or framework? Working on a new project or planning to release a plugin or web app? We would love to hear about what you are working on. Sharing our resources and the tools we use has made the web what it is today. <a href="/#contact" title="Contact Us">Contact us</a> for more details.</p>
+
+				<p><a href="/archive-talks.html" title="All Talks/Panels">View All Talks</a></p>
+			</aside>
+		{% else %}
+			<div class="content pull-left">
+				<header>
+					<p><strong>Posted on <time datetime="{{ page.date }}" title="{{ page.date | date_to_long_string }}" pubdate>{{ page.date | date_to_long_string }}</time> by {{ page.author }}</strong></p>
+				</header>
+
+				{{ content }}
+
+				{% if page.tags != empty %}
+				<footer>
+					<small class="left">In {% for tag in page.tags %}<a href="{{ site.var.tags_path }}#{{ tag }}-ref" title="Posts tagged with {{ tag }}" rel="tag">{{ tag }}</a>{% if forloop.last %}{% else %}, {% endif %}{% endfor %}</small>
+					<small class="right"><a href="#comments">Leave a Comment</a></small>
+				</footer>
+				{% endif %}
+			</div>
+
+			<aside class="pull-right">
+				<h3>Related Posts</h3>
+
+				<ul>
+					{% for rel in site.related_posts limit:3 %}
+						<li><a href="{{ rel.url }}">{{ rel.title }}</a></li>
+					{% endfor %}
+				</ul>
+
+				<a href="/archive.html" title="All Blog Posts">View Blog Archive</a>
+			</aside>
+		{% endif %}
+	</div>
+</section>

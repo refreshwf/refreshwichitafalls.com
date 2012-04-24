@@ -1,0 +1,42 @@
+<section id="social" class="section-container">
+	<header class="section-header">
+		<h2>Get Social With Us</h2>
+	</header>
+
+	<div class="wrapper">
+		<div class="content pull-left">
+			<div class="fb-like-box" data-href="http://www.facebook.com/cranewest" data-width="500" data-show-faces="true" data-border-color="#fff" data-stream="true" data-header="false"></div>
+		</div>
+
+		<aside class="pull-right">
+			<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+			<script>
+			new TWTR.Widget({
+				version: 2,
+				type: 'profile',
+				rpp: 6,
+				interval: 30000,
+				width: 300,
+				height: 500,
+				theme: {
+					shell: {
+						background: '#fff',
+						color: '#777'
+					},
+					tweets: {
+						background: '#fff',
+						color: '#777',
+						links: '#00a0b0'
+					}
+				},
+				features: {
+					scrollbar: false,
+					loop: false,
+					live: true,
+					behavior: 'all'
+				}
+			}).render().setUser('twofivethreetwo').start();
+			</script>
+		</aside>
+	</div>
+</section>

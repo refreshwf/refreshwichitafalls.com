@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+	<meta name="description" content="We are a community of Web professionals refreshing the creative, technical and professional culture of our craft.">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0, maximum-scale=1">
+	<!-- iPhone -->
+	<meta name="apple-mobile-web-app-capable" content="no">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<!-- /iPhone -->
+	<!-- IE -->
+	<meta name="application-name" content="Refresh Wichita Falls">
+	<meta name="msapplication-tooltip" content="RefreshWF">
+	<meta name="msapplication-starturl" content="/?iePinned=true">
+	<!-- /IE -->
+	<!-- Facebook -->
+	<meta property="og:title" content="Refresh Wichita Falls">
+	<meta property="og:description" content="We are a community of Web professionals refreshing the creative, technical and professional culture of our craft.">
+	<meta property="og:url" content="http://refreshwichitafalls.com">
+	<meta property="og:image" content="">
+	<!-- /Facebook -->
+	
+	<title>{{ page.title }}  Refresh Wichita Falls  -  We are a community of Web professionals refreshing the creative, technical and professional culture of our craft.</title>
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	<link rel="author" href="/humans.txt">
+	<link rel="dns-prefetch" href="//ajax.googleapis.com">
+	<link rel="sitemap" href="/sitemap.xml" type="application/xml" title="Sitemap">
+	
+	<script type="text/javascript" src="http://use.typekit.com/sji8yxv.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+	<link rel="stylesheet" href="/css/style.css?v=8" type="text/css">
+	
+	<script src="/js/modernizr-2.5.3.min.js"></script>
+</head>
+<body>
+	<div id="fb-root"></div>
+	<!--[if lt IE 7 ]><p class="chromeframe">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+	
+	<nav>
+		<ul>
+			<li class="nav-about"><a href="/#about" title="What is Refresh?">What is Refresh?</a></li>
+			<li class="nav-social"><a href="/#social" title="Get Social With Us">Get Social</a></li>
+			{% comment %}<li class="nav-blog"><a href="/#blog" title="Blog Entries">Blog</a></li>{% endcomment %}
+			<li class="nav-talks"><a href="/#talks" title="Past Talks and Panels">Talks/Panels</a></li>
+			<li class="nav-contact"><a href="/#contact" title="Interested in the group? Contact Us">Contact Us</a></li>
+			<li class="social-icons pull-right"><a href="http://facebook.com/refreshwichitafalls" title="Like Refresh Wichita Falls on Facebook"><img src="/images/facebook_32.png"></a> <a href="http://twitter.com/refreshwf" title="Follow @refreshwf"><img src="/images/twitter_32.png"></a> <a href="http://plus.google.com/117140504707860271026" title="Circle us on Google+"><img src="/images/googleplus_32.png"></a> <a href="http://github.com/refreshwf" title="Watch RefreshWF on GitHub"><img src="/images/github_32.png"></a></li>
+		</ul>
+	</nav>
+
+	<div class="wrapper">
+		<header role="banner" class="pull-left">
+			<h1><a href="/" title="Refresh Wichita Falls"><img src="/images/logo-alt.png" alt="logo"></a></h1>
+
+			<p>We are a community of web professionals working to refresh the creative, technical and professional culture in Wichita Falls through design, technology &amp; usability. The third Monday of every month we get together to explore these topics.</p>
+
+			<a href="https://twitter.com/refreshwf" class="twitter-follow-button" data-show-count="false">Follow @refreshwf</a>
+			<iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=refreshwf&type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="127px" height="20px"></iframe>
+
+			<!-- <div class="g-plusone" data-size="medium"></div> -->
+		</header>
+
+		<section class="upcoming-event pull-right">
+			{% assign next_talk = site.categories.talks.first %}
+
+			<h3>Next Meeting - {{ next_talk.meeting_date }} @ 7pm</h3>
+
+			<h4><a href="{{ next_talk.url }}" title="Permalink to {{ next_talk.title }}">{{ next_talk.title }}</a></h4>
+			{{ next_talk.content | replace:'excerpt start -->','' | replace:'<!-- excerpt end','' }}
+		</section>
+	</div>
+	
+	<div class="main cf" role="main">
+		{{ content }}
+	</div> <!-- #main -->
+	
+	<footer role="contentinfo">
+		<div class="wrapper">
+			<p class="pull-left">&copy; Copyright 2012 Refresh Wichita Falls, All Rights Reserved.</p>
+			<p class="pull-right">Wichita Falls is a <a href="http://www.refreshingcities.org/" title="Refreshing Cities">Refreshing City</a></p>
+		</div>
+	</footer>
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script>window.jQuery && document.write('<script src="/js/jquery-1.7.1.min.js"><\/script>')</script>
+	<script src="/js/wufoo.js"></script>
+	<script src="/js/jquery-scrollspy.js"></script>
+	<script src="/js/plugins.js"></script>
+	<script src="/js/common.js"></script>
+</body>
+</html>

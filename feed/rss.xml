@@ -1,0 +1,36 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+	<channel>
+		<title>refreshwichitafalls.com</title>
+		<atom:link href="http://refreshwichitafalls.com/feed/rss.xml" rel="self" type="application/rss+xml" />
+		<link>http://refreshwichitafalls.com</link>
+		<description>We are a community of Web professionals refreshing the creative, technical and professional culture of our craft.</description>
+		<lastBuildDate>{{ site.time | date_to_xmlschema }}</lastBuildDate>
+		<language>en</language>
+		<sy:updatePeriod>hourly</sy:updatePeriod>
+		<sy:updateFrequency>1</sy:updateFrequency>
+	
+		{% for post in site.posts limit:20 %}
+		<item>
+			<title>{{ post.title | xml_escape }}</title>
+			<link>http://refreshwichitafalls.com{{ post.url }}</link>
+			<guid isPermaLink="true">http://refreshwichitafalls.com{{ post.url }}</guid>
+			<comments>http://refreshwichitafalls.com{{ post.url }}#disqus_thread</comments>
+			<pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
+			<dc:creator>Refresh WF</dc:creator>
+			<description><![CDATA[{{ post.content }}]]></description>
+			<content:encoded><![CDATA[{{ post.content }}]]></content:encoded>
+		</item>
+		{% endfor %}
+	</channel>
+</rss>

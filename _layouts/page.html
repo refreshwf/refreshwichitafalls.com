@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<section class="section-container">
+	<header class="section-header">
+		<h2>{% if page.header %}{{ page.header }}{% else %}{{ page.title }}{% endif %}</h2>
+	</header>
+
+	<div class="wrapper">
+		{{ content }}
+	</div>
+</section>
