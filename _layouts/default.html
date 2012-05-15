@@ -44,7 +44,7 @@
 	<div id="fb-root"></div>
 	<!--[if lt IE 7 ]><p class="chromeframe">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 	
-	<nav>
+	<nav class="hide">
 		<ul>
 			<li class="nav-about"><a href="/#about" title="What is Refresh?">What is Refresh?</a></li>
 			<li class="nav-social"><a href="/#social" title="Get Social With Us">Get Social</a></li>
@@ -55,19 +55,17 @@
 		</ul>
 	</nav>
 
-	<div class="wrapper">
-		<header role="banner" class="pull-left">
+	<div class="wrapper header">
+		<header role="banner" class="pull-left hide">
 			<h1><a href="/" title="Refresh Wichita Falls"><img src="/images/logo-alt.png" alt="logo"></a></h1>
 
 			<p>We are a community of web professionals working to refresh the creative, technical and professional culture in Wichita Falls through design, technology &amp; usability. The third Monday of every month we get together to explore these topics.</p>
 
 			<a href="https://twitter.com/refreshwf" class="twitter-follow-button" data-show-count="false">Follow @refreshwf</a>
 			<iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=refreshwf&type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="127px" height="20px"></iframe>
-
-			<!-- <div class="g-plusone" data-size="medium"></div> -->
 		</header>
 
-		<section class="upcoming-event pull-right">
+		<section class="upcoming-event pull-right hide">
 			{% assign next_talk = site.categories.talks.first %}
 
 			<h3>Next Meeting - {{ next_talk.meeting_date }} @ 7pm</h3>
@@ -77,11 +75,11 @@
 		</section>
 	</div>
 	
-	<div class="main cf" role="main">
+	<div class="main cf hide" role="main">
 		{{ content }}
 	</div> <!-- #main -->
 	
-	<footer role="contentinfo">
+	<footer role="contentinfo" class="hide">
 		<div class="wrapper">
 			<p class="pull-left">&copy; Copyright 2012 Refresh Wichita Falls, All Rights Reserved.</p>
 			<p class="pull-right">Wichita Falls is a <a href="http://www.refreshingcities.org/" title="Refreshing Cities">Refreshing City</a></p>
