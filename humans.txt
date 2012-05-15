@@ -9,7 +9,7 @@ ______      __              _       _    _______
 \_| \_\___|_| |_|  \___|___/_| |_|  \/  \/\_|    
 
 /* TEAM */
-  Founder/Web Developer: James Fleeting
+  Web Designer/Developer: James Fleeting
   Site: http://jamesfleeting.com
   Twitter: @twofivethreetwo
   Location: Wichita Falls, Texas
@@ -20,7 +20,7 @@ ______      __              _       _    _______
   Location: Wichita Falls, Texas
 
 /* THANKS */
-  Names (& URL): 
+  Names (& URL): The entire web community!
 
 /* SITE */
   Standards: HTML5, CSS3
