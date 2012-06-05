@@ -55,8 +55,7 @@ TODO: Finishing styling blog and ready for the first posts.
 	
 	<div class="wrapper">
 		<div class="content pull-left">
-			{% comment %}TODO: After first talk, add offset:1 to the for so the upcoming event doesn't show up, only the past ones.{% endcomment %}
-			{% for post in site.categories.talks limit:3 %}
+			{% for post in site.categories.talks limit:2 offset:1 %}
 				<article class="post cat-talk" role="article">
 					<header>
 						<h3 itemprop="name"><a href="{{ post.url }}" rel="bookmark" title="Permanent Link to {{ post.title }}">{{ post.title }}</a></h3> 
