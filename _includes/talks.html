@@ -1,0 +1,34 @@
+<section id="talks" class="section-container">
+	<header class="section-header">
+		<h2>Talks</h2>
+	</header>
+	
+	<div class="wrapper">
+		<div class="content pull-left">
+			{% for post in site.categories.talks limit:1 offset:0 %}
+				<article class="post cat-talk" role="article">
+					<header>
+						<strong>THIS MONTH - {{ post.meeting_date | upcase }}</strong>
+						<h3 itemprop="name"><a href="{{ post.url }}" rel="bookmark" title="Permanent Link to {{ post.title }}">{{ post.title }}</a></h3> 
+					</header>
+				
+					<div class="post-text" itemprop="articleBody">
+						{{ post.content }}
+					</div>
+				</article>
+			{% endfor %}
+			<hr />
+			<h3><a href="/archive-talks.html">View past talks</a></h3>
+		</div>
+
+		<aside class="pull-right">
+			<h3>Your Turn</h3>
+
+			<p>We are always looking for individuals who are interested in doing a presentation. <strong>Refresh WF</strong> aims to educate across a variety of topics and skill level. Whether giving an introduction to HTML and CSS or live coding a single-page JavaScript heavy web app, we hope everyone walks away from each meeting with something.</p>
+
+			<p>Want to give a talk but not sure on what? The best advice is to talk about what you know and love. Learned some new CSS techniques recently? Did you dive into a new language? Played around with that new app or framework? Working on a new project or planning to release a plugin or web app? We would love to hear about what you are working on. Sharing our resources and the tools we use has made the web what it is today.</p>
+
+			<p>Plus, you could <a href="/#involved">win prizes</a>.</p>
+		</aside>
+	</div>
+</section>

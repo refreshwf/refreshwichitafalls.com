@@ -1,0 +1,31 @@
+--- 
+layout: post
+title: Title Case Conversion
+due_date: January 21, 2013
+category: challenges
+tags: []
+author: Jorin Slaybaugh
+---
+
+<p>Write a function that transforms a string into title case. This mostly means: capitalizing only every first letter of every word in the string. However, there are some non-obvious exceptions to title case which can't easily be hard-coded. Your function must accept, as a second argument, a set or list of words that should not be capitalized. Furthermore, the first word of every title should always have a capital leter. For example:</p>
+{% highlight js %}
+
+	// input
+	exceptions = ['jumps', 'the', 'over']
+	titlecase('the quick brown fox jumps over the lazy dog', exceptions)
+
+	// returns
+	'The Quick Brown Fox jumps over the Lazy Dog'
+{% endhighlight %}
+<p>Another Example:</p>
+{% highlight js %}
+
+	// input
+	exceptions = ['are', 'is', 'in', 'your', 'my']
+	titlecase('THE vitamins ARE IN my fresh CALIFORNIA raisins', exceptions)
+
+	// returns
+	'The Vitamins are in my Fresh California Raisins'
+{% endhighlight %}
+
+<p><strong>Got the answer? Create a <a href="http://codepen.io" title="CodePen">CodePen</a> or a <a href="http://jsfiddle.net">JS Fiddle</a> and <a href="mailto:hello@refreshwichitafalls.com?subject=[Challenge]">E-mail</a> the answer</strong>.<br />All answers are due by the next meeting and must be done in JavaScript + HTML + CSS.</p>

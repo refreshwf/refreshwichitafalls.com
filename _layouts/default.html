@@ -47,9 +47,10 @@
 	<nav class="hide">
 		<ul>
 			<li class="nav-about"><a href="/#about" title="What is Refresh?">What is Refresh?</a></li>
-			<li class="nav-social"><a href="/#social" title="Get Social With Us">Get Social</a></li>
-			{% comment %}<li class="nav-blog"><a href="/#blog" title="Blog Entries">Blog</a></li>{% endcomment %}
-			<li class="nav-talks"><a href="/#talks" title="Past Talks and Panels">Talks/Panels</a></li>
+			<li class="nav-talks"><a href="/#talks" title="Past Talks and Panels">Talks</a></li>
+			<li class="nav-challenges"><a href="/#challenges" title="Challenges">Challenges</a></li>
+			<li class="nav-involved"><a href="/#involved" title="Get Involved">Get Involved</a></li>
+			<li class="nav-social"><a href="/#social" title="Be Social With Us">Be Social</a></li>
 			<li class="nav-contact"><a href="/#contact" title="Interested in the group? Contact Us">Contact Us</a></li>
 			<li class="social-icons pull-right"><a href="http://facebook.com/refreshwichitafalls" title="Like Refresh Wichita Falls on Facebook"><img src="/images/facebook_32.png"></a> <a href="http://twitter.com/refreshwf" title="Follow @refreshwf"><img src="/images/twitter_32.png"></a> <a href="http://plus.google.com/117140504707860271026" title="Circle us on Google+"><img src="/images/googleplus_32.png"></a> <a href="http://github.com/refreshwf" title="Watch RefreshWF on GitHub"><img src="/images/github_32.png"></a></li>
 		</ul>
@@ -61,7 +62,7 @@
 
 			<p>We are a community of web professionals working to refresh the creative, technical and professional culture in Wichita Falls through design, technology &amp; usability. The third Monday of every month we get together to explore these topics.</p>
 
-			Help us shape this group by taking a minute to answer a few questions from our survey on the topics you would like to hear discussed at a future meeting. This is a community driven group and need your involvement to continue growing.<br /><br />
+			Help us shape this group by taking a minute to answer a few questions from our survey on the topics you would like to hear discussed at a future meeting. This is a community driven group and we need your involvement to continue growing.<br /><br />
 			<a href="http://goo.gl/kBS28" title="RefreshWF Survey" class="btn">RefreshWF Survey</a></p>
 
 			<a href="https://twitter.com/refreshwf" class="twitter-follow-button" data-show-count="false">Follow @refreshwf</a>
@@ -74,7 +75,17 @@
 			<h3>Next Meeting - {{ next_talk.meeting_date }} @ 7pm</h3>
 
 			<h4><a href="{{ next_talk.url }}" title="Permalink to {{ next_talk.title }}">{{ next_talk.title }}</a></h4>
-			{{ next_talk.content | replace:'excerpt start -->','' | replace:'<!-- excerpt end','' }}
+			{{ next_talk.content | strip_html | truncatewords: 100 }} <strong><a href="/#talks">Read More &amp; RSVP</a></strong>
+
+			<br/>
+			<br/>
+
+			{% assign next_challenge = site.categories.challenges.first %}
+
+			<h3>Next Challenge - Due {{ next_challenge.due_date }} @ 7pm</h3>
+
+			<h4><a href="{{ next_challenge.url }}" title="Permalink to {{ next_challenge.title }}">{{ next_challenge.title }}</a></h4>
+			{{ next_challenge.content | strip_html | truncatewords: 100 }} <strong><a href="/#challenges">Read More</a></strong>
 		</section>
 	</div>
 	

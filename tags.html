@@ -10,6 +10,7 @@ changefreq: always
 	{% include tags_list.html %}
 </ul>
 
+{% comment %}
 {% for tag in site.tags %} 
 	<article class="post">
 		<h2 id="{{ tag[0] }}-ref">{{ tag[0] }}</h2>
@@ -19,3 +20,4 @@ changefreq: always
 		</ul>
 	</article>
 {% endfor %}
+{% endcomment %}

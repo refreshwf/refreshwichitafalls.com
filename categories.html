@@ -1,4 +1,4 @@
----
+﻿---
 layout: page
 title: Categories
 header: Posts By Category
@@ -10,7 +10,7 @@ changefreq: always
 	{% include categories_list.html %}
 </ul>
 
-
+{% comment %}
 {% for category in site.categories %}
 	<article class="post">
 		<h2 id="{{ category[0] }}-ref">{{ category[0] | join: "/" }}</h2>
@@ -20,4 +20,4 @@ changefreq: always
 		</ul>
 	</article>
 {% endfor %}
-
+{% endcomment %}

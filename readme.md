@@ -12,8 +12,8 @@ If you are preparing a talk or working up a blog post then please clone this rep
 
 ## License
 
-The directories `_posts/`, `_drafts`, `downloads/` and `images/` and their contents are Copyright to their respective owners/authors.
+The directories and subdirectories of `_posts/`, `_drafts`, `downloads/` and `images/` and their contents are Copyright to their respective owners/authors.
 
 All other directories and files are MIT Licensed including the HTML and CSS. You are free to clone this repo as a starting point for your own Jekyll install or take pieces you want.
 
-Site was designed and developed by [James Fleeting](http://jamesfleeting.com). 
+Site was designed and developed by [James Fleeting](http://jamesfleeting.com). Maintained by [Jorin Slaybaugh](http://cacheandquery.com).

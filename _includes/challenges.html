@@ -1,0 +1,35 @@
+<section id="challenges" class="section-container">
+	<header class="section-header">
+		<h2>Challenges</h2>
+	</header>
+	
+	<div class="wrapper">
+		<div class="content pull-left">
+			{% for post in site.categories.challenges limit:1 offset:0 %}
+				<article class="post cat-talk" role="article">
+					<header>
+						<strong>THIS MONTH - {{ post.due_date | upcase }}</strong>
+						<h3 itemprop="name"><a href="{{ post.url }}" rel="bookmark" title="Permanent Link to {{ post.title }}">{{ post.title }}</a></h3> 
+					</header>
+				
+					<div class="post-text" itemprop="articleBody">
+						{{ post.content }}
+					</div>
+				</article>
+			{% endfor %}
+			<hr />
+			<h3><a href="/archive-challenges.html">View past challenges</a></h3>
+		</div>
+
+		<aside class="pull-right">
+			<h3>About</h3>
+
+			<p>Code challenges are a fun way for participants to get involved each month and increase their chances to <a href="/#involved">win prizes</a> at each meeting.</p>
+
+			<h3>Rules</h3>
+
+			<p>Code challenges are posted in advance of a meeting and are due by the start of the meeting to <a href="mailto:hello@refreshwichitafalls.com?subject=[Challenge]">hello@refreshwichitafalls.com</a>.  Since we are a group of <i>web professionals</i> all solutions must be done in JavaScript + HTML + CSS using a tool like <a href="http://codepen.io">CodePen</a> or <a href="http://jsfiddle.net">JS Fiddle</a>.</p>
+
+		</aside>
+	</div>
+</section>
